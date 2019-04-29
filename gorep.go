@@ -3,9 +3,9 @@ package main
 import (
 	"bufio"
 	"bytes"
-	"code.google.com/p/go.crypto/ssh/terminal"
 	"flag"
 	"fmt"
+	"golang.org/x/crypto/ssh/terminal"
 	"io/ioutil"
 	"os"
 	"path"
@@ -426,7 +426,7 @@ func (this *gorep) grep(fpath string, out chan<- grepInfo) {
 		return
 	}
 
-	buffer  := bytes.NewBuffer(mem)
+	buffer := bytes.NewBuffer(mem)
 	scanner := bufio.NewScanner(buffer)
 
 	scanner.Split(bufio.ScanLines)
